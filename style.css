@@ -1,0 +1,279 @@
+* {
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      box-sizing: border-box;
+}
+
+body {
+      background-image: url("patrick-fore-hoxqcGUheeo-unsplash.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 60vh;
+      height: 100%;
+}
+
+.header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3rem;
+}
+
+nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem;
+}
+
+.logo {
+      background-color: rgba(0, 0, 0, 0.486);
+      border-radius: 1rem;
+      padding: 1rem 2rem;
+}
+
+.logo h1 {
+      color: white;
+}
+
+.search-field {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+nav input {
+      border: none;
+      width: 300px;
+      height: 35px;
+      border-top-left-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      padding: 0 1rem;
+      outline: none;
+}
+
+nav button {
+      border: none;
+      width: 100px;
+      height: 35px;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      background-color: #9b59b6;
+      color: white;
+}
+
+.recipie-btn-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 5rem;
+      width: 600px;
+      height: 150px;
+      gap: 2rem;
+      overflow: hidden;
+      position: relative;
+      transition: all ease 1s;
+      margin: auto;
+}
+
+.recipie-btn-section .dishes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      position: absolute;
+      transition: all ease 1s;
+      width: 100%;
+      height: 100%;
+}
+
+.recipie-btn-section .dishes input {
+      width: 100px;
+      height: 30px;
+      border-radius: 1rem;
+      background-color: #9b59b6;
+      border: none;
+      color: white;
+      cursor: pointer;
+
+}
+
+.recipie-btn-section .dishes input:hover {
+      background-color: #be55e7;
+
+}
+
+.recipie-btn-section #nextbtn {
+      position: absolute;
+      right: 10px;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      animation-name: nextbtn;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+}
+
+@keyframes nextbtn {
+      0% {
+            transform: translateX(0%);
+      }
+
+      100% {
+            transform: translateX(20%);
+      }
+
+}
+
+#prevbtn {
+      position: absolute;
+      left: 10px;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+}
+
+
+@media screen and (max-width:604px) {
+      .recipie-btn-section {
+            width: 100%;
+      }
+}
+
+@media screen and (max-width:490px) {
+      .recipie-btn-section .dishes {
+            gap: 1rem;
+      }
+}
+
+@media screen and (max-width:414px) {
+      .logo h1 {
+            font-size: 1.2rem;
+      }
+
+      .recipie-btn-section #nextbtn {
+            top: 50px;
+            right: 50%;
+            left: 50;
+            transform: translate(-50%, -50%);
+      }
+
+      .search-field input {
+            width: 100%;
+      }
+
+      .recipie-btn-section .dishes input {
+            width: 100%;
+      }
+}
+
+@media screen and (max-width:348px) {
+      .logo {
+            width: 100%;
+      }
+
+      .logo h1 {
+            font-size: .8rem;
+      }
+}
+
+.result-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      transition: all ease 1s;
+      padding: .5rem;
+}
+
+.result-area .card {
+      width: 400px;
+      height: 400px;
+      border-radius: 1rem;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.315);
+      overflow-y: scroll;
+      transition: all ease 1s;
+      position: relative;
+}
+
+.result-area .card::-webkit-scrollbar {
+      display: none;
+}
+
+.result-area .card h1 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      position: relative;
+      display: inline-block;
+}
+
+.result-area .card h1::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: -10px;
+      bottom: -10px;
+      border-left: 2px solid red;
+      border-bottom: 2px solid red;
+}
+
+.result-area .card h1::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      border-right: 2px solid red;
+      border-bottom: 2px solid red;
+}
+
+
+.result-area .card p {
+      /* margin-left: 1rem; */
+      text-align: justify;
+      padding: .5rem;
+      font-weight: 200;
+      font-size: .8rem;
+}
+
+.result-area img {
+      width: 100%;
+      position: relative;
+}
+
+.result-area span {
+      position: absolute;
+      background-color: rgba(255, 145, 0, 0.527);
+      left: 50%;
+      right: 50%;
+      top: -50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(8, 236, 8);
+      font-size: 2rem;
+      transition: .5s;
+      /* display: none; */
+}
+
+.result-area .card:hover span {
+      display: flex;
+      transition: 1s;
+      top: 50%;
+}
